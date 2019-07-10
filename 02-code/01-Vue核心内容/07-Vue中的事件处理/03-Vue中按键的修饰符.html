@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" value="" v-model="msg" @keyup="enterHandler">
+        <input type="text" value="" v-model="msg" @keyup.enter="enterHandler2">
+        <input type="text" value="" v-model="msg" @keyup.13="enterHandler3">
+    </div>
+    <script type="text/javascript">
+            //需求:在文本框中,按下回车可以显示当前文本框的值
+            const vm = new Vue({
+                el:'#app',
+                data:{
+                    msg:'我是文本框'
+                },
+                methods: {
+                    enterHandler(evt){
+                        //检测用户是否按下了回车,回车按键值就是:13
+                        if(evt.keyCode===13){
+                            console.log(evt.target.value)
+                        }
+                    },
+                    enterHandler2(evt){
+                        console.log(evt.target.value)
+                    },
+                    enterHandler3(evt){
+                        console.log(evt.target.value)
+                    }
+                }
+            })
+    </script>
+</body>
+
+</html>

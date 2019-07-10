@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <fieldset>
+            <legend>style操作:style中书写的时候有多个值,采用对象写法</legend>
+            <p :style="{color:fontColor,fontSize:size+'px'}">健哥</p>
+            <button @click="changeStyle1">修改style</button>
+        </fieldset>
+        <fieldset>
+            <legend>style操作:动态操作设置键值,采用数组写法</legend>
+            <p :style="[styleColor,styleFont]">健哥</p>
+            <button @click="changeStyle2">添加style样式</button>
+        </fieldset>
+    </div>
+    <script type="text/javascript">
+        /** 
+        1.通过vue的方式设置元素的样式,两种方式常用:
+            1.1  :className的方式:(:class="{}"或者:class="[]")
+            1.2  :style的方式:(:style="{}"或者:style="[]")
+        
+         */
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                fontColor:'red',
+                size:20,
+                styleColor:{color:'pink'},
+                styleFont:{fontSize:'50px'}
+            },
+            methods: {
+                //点击按钮这是data属性中的属性值
+                changeStyle1(){
+                    this.fontColor='green'
+                    this.size=50
+                },
+                //点击按钮设置data对象中的属性(下面的两个属性的值本质是对象(通过键值对的方式))
+                changeStyle2(){
+                    this.styleColor={color:'orange'}
+                    this.styleFont={fontSize:'20px'}
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

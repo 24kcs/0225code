@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-text-test="msg"></p>
+    </div>
+   <script src="./vue-My-Plugin.js"></script>
+    <script type="text/javascript">
+        /**
+         * Vue中的插件
+         * https://cn.vuejs.org/v2/guide/plugins.html
+         * 
+         * 
+         * Vue.use()内部会安装插件,内部调用install
+         * 
+         */
+        //声明使用Vue的插件:MyPlugin
+
+        //先引入插件文件
+
+        //必须要通过Vue.use()声明使用插件
+        Vue.use(MyPlugin)
+
+        //才可以使用插件内部的方法及指令等
+        Vue.GlobalShow()
+
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'哈哈'
+            }
+        })
+
+        vm.$GlobalShow()
+       
+    </script>
+</body>
+
+</html>
