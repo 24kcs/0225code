@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_模板解析_表达式_vue</title>
+  <script src="./js/mvvm.js"></script>
+  <script src="./js/compile.js"></script>
+  <script src="./js/observer.js"></script>
+  <script src="./js/watcher.js"></script>
+</head>
+<body>
+<div id="app">
+  <p>{{msg}}</p>
+</div>
+<script type="text/javascript">
+  const vm = new MVVM({
+    el:'#app',
+    data:{
+      msg:'abc'
+    }
+  })
+  //属性:vm实例对象中都是属性----data对象中的属性
+  //表达式:模版中(上面的html中用到的属性,叫表达式)
+  //模版解析:打开页面中,页面初始化的时候,直接把相对应的表达式,指令,事件，进行解析,最终以真正的html的效果进行展示
+
+  var reg = /\{\{(.*)\}\}/;
+  reg.$2
+
+  //邮箱的正则表达式
+  ///([0-9a-zA-Z_.-]+)[@][0-9a-zA-Z_.-]+(([.][a-zA-Z]+){1,2})/
+  //正则表达式中有几对小括号,就有几组
+  //想使用哪一组,就用$数字即可
+
+
+  //<p>{{msg}}</p>  p.textContent="值"
+  //<p v-text="msg"></p> p.textConent="值"
+   
+
+</script>
+</body>
+</html>
