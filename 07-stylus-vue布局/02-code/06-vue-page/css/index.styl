@@ -1,0 +1,64 @@
+@import "./reset.css"
+@import "./mixins.styl"
+$mainColor=#02a774
+html,body
+  overflow hidden
+  .app
+    width 100%
+    height 100%
+    .content
+      width 100%
+      height 100%
+      section
+        position absolute
+        left 0
+        top 0
+        width 100%
+        height 100%
+        display none
+        &.on
+          display block
+        .swiper-container
+          height 200px
+          .swiper-slide
+            height 180px
+            clearFix()
+            .slideItem
+              float left
+              width 25%
+              height 50%
+              a
+                display flex
+                justify-content center
+                align-items center
+                flex-direction column
+                img
+                  width 50px
+                  height 50px
+                  margin-top 10px
+                .itemText
+                  font-size 13px
+
+          .swiper-pagination-bullet-active
+            background-color $mainColor
+    .footer
+      top-border-1px(#ddd)
+      position fixed
+      left 0
+      bottom 0
+      width 100%
+      height 50px
+      display flex
+      .footerItem
+        flex 1
+        display flex
+        justify-content center
+        align-items center
+        flex-direction column
+        .iconfont
+          font-size 20px
+        .itemText
+          font-size 13px
+          margin 3px 2px
+        &.active
+          color $mainColor
