@@ -1,0 +1,29 @@
+@import "./reset.css"
+@import "./mixins.styl"
+$mainColor=#02a774
+html,body
+  overflow hidden
+  .app
+    width 100%
+    height 100%
+    .footer
+      top-border-1px(#ddd)
+      position fixed
+      left 0
+      bottom 0
+      width 100%
+      height 50px
+      display flex
+      .footerItem
+        flex 1
+        display flex
+        justify-content center
+        align-items center
+        flex-direction column
+        .iconfont
+          font-size 20px
+        .itemText
+          font-size 13px
+          margin 3px 2px
+        &.active
+          color $mainColor

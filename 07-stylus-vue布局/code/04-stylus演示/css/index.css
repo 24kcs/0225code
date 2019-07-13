@@ -1,0 +1,14 @@
+@import "./reset.css";
+html,
+body {
+  overflow: hidden;
+}
+html .app,
+body .app {
+  width: 200px;
+  height: 150px;
+  background-color: #008000;
+  color: #f00;
+  border: 1px solid #ff0;
+  font-size: 30px;
+}
